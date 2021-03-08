@@ -5,3 +5,10 @@
  * HINT:
  * This can be done by either using a LEFT JOIN or by using the NOT IN clause and a subquery.
  */
+
+SELECT
+    title
+    FROM film
+    WHERE title NOT IN (
+        SELECT title
+        FROM film INNER JOIN inventory USING (film_id))
